@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:petaldash/src/pages/client/profile/info/client_profile_info_controller.dart';
 import 'package:get/get.dart';
 
 
 class ClientProfileInfoPage extends StatelessWidget {
   ClientProfileInfoController con = Get.put(ClientProfileInfoController());
+  Future<void> logout() async {
+    final GoogleSignIn googleSign = GoogleSignIn();
+    await googleSign.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,7 @@ class ClientProfileInfoPage extends StatelessWidget {
           _imageUser(context),
           Column(
             children: [
-              _buttonSingOut(),
+              _buttonSingOut(context),
               _buttonRoles()
             ],
           )
@@ -140,13 +145,17 @@ class ClientProfileInfoPage extends StatelessWidget {
     );
   }
 
-  Widget _buttonSingOut() {
+  Widget _buttonSingOut(BuildContext context) {
     return SafeArea(
       child: Container(
         margin: EdgeInsets.only(right: 20, top: 5),
         alignment: Alignment.topRight,
         child: IconButton(
-          onPressed: () => con.singnOut(),
+          onPressed: () async {
+             con.singnOut();
+            await logout();
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.power_settings_new,
             color: Colors.black,

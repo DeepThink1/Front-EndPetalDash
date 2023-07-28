@@ -138,18 +138,18 @@ class LoginController extends GetxController {
 
   Future<void> loginGoogleSignIn(BuildContext context) async {
     try {
-      GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) return; // El usuario canceló el inicio de sesión
 
-      GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-      firebaseAuth.AuthCredential credential = firebaseAuth.GoogleAuthProvider.credential(
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final firebaseAuth.AuthCredential credential = firebaseAuth.GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
       // Iniciar sesión en Firebase con las credenciales de Google
-      firebaseAuth.UserCredential userCredential = await firebaseAuth.FirebaseAuth.instance.signInWithCredential(credential);
-      firebaseAuth.User? user = userCredential.user;
+     final firebaseAuth.UserCredential userCredential = await firebaseAuth.FirebaseAuth.instance.signInWithCredential(credential);
+      final firebaseAuth.User? user = userCredential.user;
 
       // Aquí puedes manejar el inicio de sesión exitoso con el usuario de Firebase
       if (user != null) {
