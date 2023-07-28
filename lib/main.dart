@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petaldash/src/models/User.dart';
@@ -26,9 +27,10 @@ import 'package:petaldash/src/pages/roles/roles_page.dart';
 
 User userSesion = User.fromJson(GetStorage().read('user') ?? {});
 
-void main() async{
-  await GetStorage.init();
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {

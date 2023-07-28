@@ -165,4 +165,7 @@ class RegisterController extends GetxController{
 
     });
   }
+
+
+
 }
