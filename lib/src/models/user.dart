@@ -55,4 +55,13 @@ class User {
     "session_token": sessionToken,
     'roles': roles
   };
+
+  static List<User> fromJsonList(List<dynamic> jsonList) {
+    List<User> toList = [];
+    jsonList.forEach((item) {
+      User users = User.fromJson(item);
+      toList.add(users);
+    });
+    return toList;
+  }
 }

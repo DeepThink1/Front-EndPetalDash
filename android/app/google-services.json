@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "638461927974",
+    "project_id": "projectpetal-d1821",
+    "storage_bucket": "projectpetal-d1821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638461927974:android:ca36a6d606e08745d2fce7",
+        "android_client_info": {
+          "package_name": "com.petaldash.petaldash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638461927974-p97p6i3vvhue2om3gl6rg535a7l1n7ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.petaldash.petaldash",
+            "certificate_hash": "d1840995474cb4602e41276966da9bb84bec89c8"
+          }
+        },
+        {
+          "client_id": "638461927974-amdort057j5logf7j1vt6fi7dabkt55l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNEsR6aq7J0mrugsRCVlPmhVJQ05IUu5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638461927974-amdort057j5logf7j1vt6fi7dabkt55l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

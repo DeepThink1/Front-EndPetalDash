@@ -1,7 +1,13 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class ClientProductsListController extends GetxController {
+class FlowershopHomeController extends GetxController {
+   //observable
+  var indexTab = 0.obs;
+
+  void changeTab( int index){
+    indexTab.value = index;
+  }
 
   void signOut() {
     GetStorage().remove('user');
