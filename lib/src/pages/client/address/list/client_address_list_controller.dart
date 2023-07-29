@@ -55,7 +55,7 @@ class ClientAddressListController extends GetxController {
     Fluttertoast.showToast(msg: responseApi.message ?? '', toastLength: Toast.LENGTH_LONG);
     if(responseApi.success == true){
       GetStorage().remove('shopping_bag');
-      Get.toNamed('/client/payments/create');
+      Get.offNamedUntil('/client/home', (route) => false);
     }
 
     //Get.toNamed('/client/payments/create');

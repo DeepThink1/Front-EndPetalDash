@@ -134,13 +134,13 @@ class ClientProductsDetailPage extends StatelessWidget {
                 child: Text(
                   'Agregar   \$${price.value}',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.amber,
+                    primary: Color(0xFF540748),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                     ),
